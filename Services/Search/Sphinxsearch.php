@@ -128,6 +128,28 @@ class Sphinxsearch
 		$this->sphinx->resetFilters();
 	}
 
+    /**
+     * Set ranking mode.
+     *
+     * @param int $ranker The ranker mode to be used.
+     * @param string $rankexpr The algebraic expression used for ranking.
+     */
+    public function setRankingMode($ranker, $rankexpr = "")
+    {
+        $this->sphinx->SetRankingMode($ranker, $rankexpr);
+    }
+
+    /**
+     * Set matches sorting mode.
+     *
+     * @param int $mode The sorting mode to be used.
+     * @param string $sortby The expression or the fields used for sorting.
+     */
+    public function setSortMode($mode, $sortby = "")
+    {
+        $this->sphinx->SetSortMode($mode, $sortby);
+    }
+
 	/**
 	 * Search for the specified query string.
 	 *
